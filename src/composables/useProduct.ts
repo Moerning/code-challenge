@@ -98,7 +98,7 @@ export const useProduct = () => {
             let productAdded: any = {
                 ...product, thumbnail: URL.createObjectURL(new Blob([product.thumbnail as BlobPart])), brand: product.brand?.value ?? "",id
             }
-            state.products.push(productAdded)
+            state.products.unshift(productAdded)
             disableLoading()    
             toast.success('Product Added Successfully!')
         } catch (error) {
